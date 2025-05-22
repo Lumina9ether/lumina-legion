@@ -1,0 +1,44 @@
+<paste your provided CSS content here>
+
+.tier-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.tier-card {
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid #8F00FF;
+  border-radius: 20px;
+  padding: 30px;
+  width: 300px;
+  box-shadow: 0 0 20px #8F00FF;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tier-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #8F00FF, 0 0 40px #5500AA;
+}
+
+.glow-button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(90deg, #8F00FF, #5500AA);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #8F00FF;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.glow-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #8F00FF, 0 0 45px #5500AA;
+}
