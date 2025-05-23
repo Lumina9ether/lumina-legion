@@ -14,6 +14,16 @@
       font-family: Orbitron, sans-serif;
       color: #ffffff;
     }
+    .center {
+      text-align: center;
+    }
+    .testimonial-card {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .enroll, .donate {
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -31,20 +41,21 @@
         <button id="ask-lumina" class="glow-button">Ask Lumina</button>
         <div id="subtitles"></div>
       </div>
-
       <button id="hey-lumina-button" class="glow-button special">Hey Lumina</button>
-      <button id="stop-button" class="glow-button-red">Stop Lumina</button>
+      <div style="text-align: center;">
+        <button id="stop-button" class="glow-button-red">Stop Lumina</button>
+      </div>
     </div>
   </section>
 
-  <section class="mission" style="text-align: center;">
+  <section class="mission center">
     <h2>Our Mission</h2>
     <p>
       Lumina Legacy LLC is devoted to empowering entrepreneurs and visionaries through cosmic AI automation, spiritual branding, and digital legacy creation. We believe in building wealth with purpose, and using AI as a divine tool for elevation.
     </p>
   </section>
 
-  <section class="ebook" style="text-align: center;">
+  <section class="ebook center">
     <h2>Free Gift: Lumina’s Guide to a 6-Figure AI-Powered Business</h2>
     <p>Get instant access to our free eBook and start your journey with Lumina today.</p>
     <div class="ebook-box">
@@ -56,10 +67,10 @@
     </div>
   </section>
 
-  <section class="packages">
+  <section class="packages center">
     <section class="pain-points">
       <h2>Common Struggles We Solve</h2>
-      <ul>
+      <ul style="text-align: left; display: inline-block;">
         <li><strong>Overwhelmed by tech?</strong> Lumina simplifies automation with guided flows and built-in intelligence.</li>
         <li><strong>Struggling with brand clarity?</strong> Lumina realigns your visual identity and messaging across all platforms.</li>
         <li><strong>No leads coming in?</strong> We set up AI-powered funnels and email sequences to convert visitors into buyers.</li>
@@ -119,7 +130,7 @@
 
     <section id="testimonials">
       <h2 class="glow-title">What Our Clients Say</h2>
-      <div class="testimonial-container">
+      <div class="testimonial-container center">
         <div class="testimonial-card">
           <p>"Lumina changed the game for my business — within weeks, I was closing automated sales!"</p>
           <span>— Amanda J., Digital Coach</span>
@@ -144,7 +155,7 @@
       <input name="voice_style" placeholder="Preferred Voice Style" type="text"/>
       <input name="income_target" placeholder="Income Target" type="text"/>
       <input name="mood" placeholder="Current Mood" type="text"/>
-      <button type="submit">💾 Save Memory</button>
+      <button class="glow-button" type="submit">💾 Save Memory</button>
     </form>
   </div>
 
