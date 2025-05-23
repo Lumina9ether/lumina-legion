@@ -1,1 +1,47 @@
 <paste your provided CSS content here>
+
+.tier-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.tier-card {
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid #8F00FF;
+  border-radius: 20px;
+  padding: 25px;
+  width: 300px;
+  box-shadow: 0 0 25px rgba(143,0,255,0.5), 0 0 50px rgba(85,0,170,0.3);
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tier-card:hover {
+  transform: scale(1.06);
+  border-color: #8F00FF;
+  box-shadow: 0 0 30px #8F00FF, 0 0 60px #5500AA;
+}
+
+.tier-card h3 {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.tier-card .price {
+  color: #00ffff;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.tier-card ul {
+  list-style: none;
+  padding: 0;
+  color: #ccc;
+}
+
+.tier-card ul li {
+  margin: 10px 0;
+}
