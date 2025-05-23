@@ -1,3 +1,4 @@
+
 body {
   background: url('https://www.transparenttextures.com/patterns/stardust.png'),
               radial-gradient(ellipse at bottom, #0b0c2a 0%, #000000 100%);
@@ -18,7 +19,6 @@ h1.glow-title {
   margin-top: 2rem;
 }
 
-/* ORB Styling */
 .orb-wrapper {
   position: relative;
   width: 150px;
@@ -64,7 +64,6 @@ h1.glow-title {
   100% { transform: translate(0, 0) rotate(360deg); opacity: 0.5; }
 }
 
-/* AI Tier Cards */
 .tier-container {
   display: flex;
   flex-wrap: wrap;
@@ -105,14 +104,11 @@ h1.glow-title {
 .tier-card ul li {
   margin: 10px 0;
 }
-
-/* Gold glow for Sovereign */
 .tier-card.tier-sovereign {
   border: 2px solid gold !important;
   box-shadow: 0 0 30px gold, 0 0 60px goldenrod !important;
 }
 
-/* Glowing Buttons */
 #ask-lumina, #hey-lumina-button {
   background: linear-gradient(90deg, #6e00ff, #00d4ff);
   color: white;
@@ -146,7 +142,6 @@ h1.glow-title {
   box-shadow: 0 0 25px red, 0 0 40px crimson;
 }
 
-/* Center Timeline + Memory Editor */
 #timeline-container, #memory-editor {
   text-align: center;
   margin: 60px auto;
