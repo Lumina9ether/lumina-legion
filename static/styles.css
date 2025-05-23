@@ -1,3 +1,4 @@
+
 /* Global Styling */
 body {
   background-color: #000;
@@ -166,4 +167,25 @@ body {
 
 #memory-form button:hover {
   transform: scale(1.05);
+}
+
+#hey-lumina-button {
+  display: block;
+  margin: 20px auto 40px auto;
+  padding: 14px 28px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background: radial-gradient(circle at center, #6e00ff, #00d4ff);
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 0 25px #00d4ff, 0 0 55px #6e00ff;
+  cursor: pointer;
+  animation: pulse 2s infinite;
+  transition: all 0.3s ease-in-out;
+}
+
+#hey-lumina-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 35px #00ffff, 0 0 70px #8F00FF;
 }
