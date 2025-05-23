@@ -1,79 +1,28 @@
+
 body {
-  background: url('https://www.transparenttextures.com/patterns/stardust.png'),
-              radial-gradient(ellipse at bottom, #0b0c2a 0%, #000000 100%);
-  background-size: cover;
-  background-attachment: fixed;
-  color: #ffffff;
-  font-family: 'Orbitron', sans-serif;
+  background-color: #000;
+  color: #fff;
+  font-family: Orbitron, sans-serif;
   margin: 0;
   padding: 0;
-  text-shadow: 0 0 5px #fff, 0 0 10px #0ff, 0 0 20px #0ff;
 }
 
-h1.glow-title {
-  text-align: center;
-  font-size: 3rem;
+.glow-title {
+  font-size: 2.5rem;
   color: #00ffff;
-  text-shadow: 0 0 10px #00ffff, 0 0 20px #00cccc;
-  margin-top: 2rem;
+  text-shadow: 0 0 10px #00ffff;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
-/* FLOATING STICKY ORB */
-.orb-wrapper {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 999;
-}
-#orb {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #66fcf1, #1f2833, #0b0c2a);
-  box-shadow: 0 0 30px #00ffe7, 0 0 60px #00ffe7;
-  animation: orbPulse 2.5s infinite ease-in-out;
-}
-@keyframes orbPulse {
-  0% { transform: scale(1); box-shadow: 0 0 20px #00ffff; }
-  50% { transform: scale(1.1); box-shadow: 0 0 40px #00ccff; }
-  100% { transform: scale(1); box-shadow: 0 0 20px #00ffff; }
-}
-
-.particles {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  pointer-events: none;
-}
-.particles span {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  background: #00ffffaa;
-  border-radius: 50%;
-  animation: floatAround 4s infinite ease-in-out;
-}
-.particles span:nth-child(1) { top: -10px; left: 50%; animation-delay: 0s; }
-.particles span:nth-child(2) { bottom: -10px; right: 50%; animation-delay: 0.5s; }
-.particles span:nth-child(3) { top: 50%; left: -10px; animation-delay: 1s; }
-.particles span:nth-child(4) { top: 20%; right: -10px; animation-delay: 1.5s; }
-.particles span:nth-child(5) { bottom: 20%; left: -10px; animation-delay: 2s; }
-@keyframes floatAround {
-  0% { transform: translate(0, 0) rotate(0deg); opacity: 0.5; }
-  50% { transform: translate(10px, -10px) rotate(180deg); opacity: 1; }
-  100% { transform: translate(0, 0) rotate(360deg); opacity: 0.5; }
-}
-
-/* AI TIER CARDS */
 .tier-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
   margin-top: 40px;
-  text-align: center;
 }
+
 .tier-card {
   background: rgba(0, 0, 0, 0.6);
   border: 2px solid #8F00FF;
@@ -84,100 +33,88 @@ h1.glow-title {
   backdrop-filter: blur(8px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .tier-card:hover {
   transform: scale(1.06);
   border-color: #8F00FF;
   box-shadow: 0 0 30px #8F00FF, 0 0 60px #5500AA;
 }
+
 .tier-card h3 {
   color: #ffffff;
   margin-bottom: 10px;
 }
+
 .tier-card .price {
   color: #00ffff;
   font-size: 1.5rem;
   margin-bottom: 15px;
 }
+
 .tier-card ul {
   list-style: none;
   padding: 0;
   color: #ccc;
 }
+
 .tier-card ul li {
   margin: 10px 0;
 }
-/* SPECIAL GOLD EFFECT FOR SOVEREIGN */
-.tier-card.tier-sovereign {
-  border: 2px solid gold !important;
-  box-shadow: 0 0 30px gold, 0 0 60px goldenrod !important;
+
+/* Orb */
+#orb {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #00ffff, #000066);
+  box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+  animation: pulse 2.5s infinite ease-in-out;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
 }
 
-/* BUTTON GLOWING EFFECTS */
-#ask-lumina, #hey-lumina-button {
-  background: linear-gradient(90deg, #6e00ff, #00d4ff);
-  color: white;
-  font-weight: bold;
+@keyframes pulse {
+  0% { transform: translateX(-50%) scale(1); box-shadow: 0 0 20px #00d4ff, 0 0 40px #6e00ff; }
+  50% { transform: translateX(-50%) scale(1.1); box-shadow: 0 0 30px #00ffff, 0 0 60px #9b00ff; }
+  100% { transform: translateX(-50%) scale(1); box-shadow: 0 0 20px #00d4ff, 0 0 40px #6e00ff; }
+}
+
+/* Buttons */
+.glow-button {
+  padding: 10px 24px;
   font-size: 16px;
-  padding: 12px 24px;
-  border-radius: 25px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(90deg, #8F00FF, #5500AA);
   border: none;
-  box-shadow: 0 0 15px #6e00ff;
+  border-radius: 25px;
+  box-shadow: 0 0 15px #8F00FF;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
 }
-#ask-lumina:hover, #hey-lumina-button:hover {
+
+.glow-button:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 25px #6e00ff, 0 0 40px #00d4ff;
+  box-shadow: 0 0 25px #8F00FF, 0 0 45px #5500AA;
 }
-#stop-button {
-  background: crimson;
-  color: white;
-  font-weight: bold;
+
+.glow-button-red {
+  padding: 10px 20px;
   font-size: 16px;
-  padding: 12px 24px;
-  border-radius: 25px;
+  font-weight: bold;
+  color: white;
+  background-color: crimson;
   border: none;
+  border-radius: 25px;
   box-shadow: 0 0 15px red;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-#stop-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px red, 0 0 40px crimson;
+  transition: all 0.3s ease;
 }
 
-/* TIMELINE + MEMORY */
-#timeline-container, #memory-editor {
-  text-align: center;
-  margin: 60px auto;
-  max-width: 700px;
-}
-#timeline-container h2,
-#memory-editor h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #00ffff;
-  text-shadow: 0 0 10px #00ffff;
-}
-#memory-form input,
-#memory-form button {
-  display: block;
-  margin: 10px auto;
-  width: 90%;
-  max-width: 500px;
-}
-#memory-form input {
-  padding: 12px;
-  border-radius: 12px;
-  border: 1px solid #00ffff55;
-  background: rgba(255,255,255,0.05);
-  color: #fff;
-}
-#memory-form button {
-  background: linear-gradient(90deg, #00d4ff, #8F00FF);
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
-  border-radius: 14px;
-  box-shadow: 0 0 20px #00d4ff;
+.glow-button-red:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px red, 0 0 45px crimson;
 }
