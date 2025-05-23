@@ -1,3 +1,4 @@
+
 body {
   background: url('https://www.transparenttextures.com/patterns/stardust.png'),
               radial-gradient(ellipse at bottom, #0b0c2a 0%, #000000 100%);
@@ -198,4 +199,87 @@ button:hover {
   font-size: 16px;
   border-radius: 14px;
   box-shadow: 0 0 20px #00d4ff;
+}
+
+
+
+/* ORB STYLING */
+.orb-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+#orb {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #00ffff, #000066);
+  box-shadow: 0 0 20px #00ffff, 0 0 40px #00ccff, 0 0 60px #0099ff;
+  animation: orbPulse 2s infinite ease-in-out;
+}
+@keyframes orbPulse {
+  0% { transform: scale(1); box-shadow: 0 0 20px #00ffff; }
+  50% { transform: scale(1.1); box-shadow: 0 0 40px #00ccff; }
+  100% { transform: scale(1); box-shadow: 0 0 20px #00ffff; }
+}
+
+/* GLOWING BUTTONS */
+#ask-lumina, #hey-lumina-button {
+  background: linear-gradient(90deg, #6e00ff, #00d4ff);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 12px 24px;
+  border-radius: 25px;
+  border: none;
+  box-shadow: 0 0 15px #6e00ff;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#ask-lumina:hover, #hey-lumina-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #6e00ff, 0 0 40px #00d4ff;
+}
+
+#stop-button {
+  background: crimson;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 12px 24px;
+  border-radius: 25px;
+  border: none;
+  box-shadow: 0 0 15px red;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#stop-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px red, 0 0 40px crimson;
+}
+
+/* TIER CONTAINER */
+.tier-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+/* GOLDEN HIGHLIGHT FOR SOVEREIGN */
+.tier-sovereign {
+  border-color: gold !important;
+  box-shadow: 0 0 30px gold, 0 0 60px goldenrod !important;
+}
+
+/* CENTER TIMELINE & MEMORY */
+#timeline-container, #memory-editor {
+  text-align: center;
+}
+#memory-form button {
+  display: block;
+  margin: 0 auto;
 }
