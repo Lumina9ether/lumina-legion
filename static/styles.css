@@ -1,4 +1,3 @@
-
 body {
   background: url('https://www.transparenttextures.com/patterns/stardust.png'),
               radial-gradient(ellipse at bottom, #0b0c2a 0%, #000000 100%);
@@ -19,27 +18,25 @@ h1.glow-title {
   margin-top: 2rem;
 }
 
-/* Orb Styling */
+/* ORB Styling */
 .orb-wrapper {
   position: relative;
   width: 150px;
   height: 150px;
-  margin: 40px auto 0 auto;
+  margin: 40px auto;
 }
-
 #orb {
   width: 100%;
   height: 100%;
   border-radius: 50%;
   background: radial-gradient(circle, #66fcf1, #1f2833, #0b0c2a);
-  box-shadow: 0 0 25px #00ffe7, 0 0 60px #00ffe7;
-  animation: orb-pulse 3s infinite ease-in-out;
+  box-shadow: 0 0 30px #00ffe7, 0 0 60px #00ffe7;
+  animation: orbPulse 2.5s infinite ease-in-out;
 }
-
-@keyframes orb-pulse {
-  0% { transform: scale(1); box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; }
-  50% { transform: scale(1.1); box-shadow: 0 0 35px #00d4ff, 0 0 60px #6e00ff; }
-  100% { transform: scale(1); box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; }
+@keyframes orbPulse {
+  0% { transform: scale(1); box-shadow: 0 0 20px #00ffff; }
+  50% { transform: scale(1.1); box-shadow: 0 0 40px #00ccff; }
+  100% { transform: scale(1); box-shadow: 0 0 20px #00ffff; }
 }
 
 .particles {
@@ -48,7 +45,6 @@ h1.glow-title {
   width: 100%; height: 100%;
   pointer-events: none;
 }
-
 .particles span {
   position: absolute;
   width: 8px;
@@ -57,29 +53,26 @@ h1.glow-title {
   border-radius: 50%;
   animation: floatAround 4s infinite ease-in-out;
 }
-
 .particles span:nth-child(1) { top: -10px; left: 50%; animation-delay: 0s; }
 .particles span:nth-child(2) { bottom: -10px; right: 50%; animation-delay: 0.5s; }
 .particles span:nth-child(3) { top: 50%; left: -10px; animation-delay: 1s; }
 .particles span:nth-child(4) { top: 20%; right: -10px; animation-delay: 1.5s; }
 .particles span:nth-child(5) { bottom: 20%; left: -10px; animation-delay: 2s; }
-
 @keyframes floatAround {
   0% { transform: translate(0, 0) rotate(0deg); opacity: 0.5; }
   50% { transform: translate(10px, -10px) rotate(180deg); opacity: 1; }
   100% { transform: translate(0, 0) rotate(360deg); opacity: 0.5; }
 }
 
-/* Tier Cards */
+/* AI Tier Cards */
 .tier-container {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
-  flex-wrap: wrap;
   margin-top: 40px;
+  text-align: center;
 }
-
 .tier-card {
   background: rgba(0, 0, 0, 0.6);
   border: 2px solid #8F00FF;
@@ -90,141 +83,36 @@ h1.glow-title {
   backdrop-filter: blur(8px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .tier-card:hover {
   transform: scale(1.06);
   border-color: #8F00FF;
   box-shadow: 0 0 30px #8F00FF, 0 0 60px #5500AA;
 }
-
-.tier-card.tier-sovereign {
-  border: 2px solid gold;
-  box-shadow: 0 0 30px gold, 0 0 60px #ffd700;
-}
-
 .tier-card h3 {
   color: #ffffff;
   margin-bottom: 10px;
 }
-
 .tier-card .price {
   color: #00ffff;
   font-size: 1.5rem;
   margin-bottom: 15px;
 }
-
 .tier-card ul {
   list-style: none;
   padding: 0;
   color: #ccc;
 }
-
 .tier-card ul li {
   margin: 10px 0;
 }
 
-/* Glowing Button Styles */
-button {
-  font-family: inherit;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  padding: 12px 24px;
-  border-radius: 12px;
+/* Gold glow for Sovereign */
+.tier-card.tier-sovereign {
+  border: 2px solid gold !important;
+  box-shadow: 0 0 30px gold, 0 0 60px goldenrod !important;
 }
 
-button:hover {
-  transform: scale(1.05);
-}
-
-#ask-lumina, #hey-lumina-button {
-  background: linear-gradient(90deg, #8F00FF, #5500AA);
-  color: white;
-  box-shadow: 0 0 12px #8F00FF, 0 0 24px #5500AA;
-}
-
-#ask-lumina:hover, #hey-lumina-button:hover {
-  box-shadow: 0 0 20px #8F00FF, 0 0 40px #5500AA;
-}
-
-#stop-button {
-  background-color: crimson;
-  color: white;
-  box-shadow: 0 0 15px red;
-}
-
-#stop-button:hover {
-  background-color: darkred;
-  box-shadow: 0 0 25px red, 0 0 40px crimson;
-}
-
-/* Center Timeline + Memory Editor */
-#timeline-container,
-#memory-editor {
-  text-align: center;
-  margin: 60px auto;
-  max-width: 700px;
-}
-
-#timeline-container h2,
-#memory-editor h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #00ffff;
-  text-shadow: 0 0 10px #00ffff;
-}
-
-#memory-form input,
-#memory-form button {
-  display: block;
-  margin: 10px auto;
-  width: 90%;
-  max-width: 500px;
-}
-
-#memory-form input {
-  padding: 12px;
-  border-radius: 12px;
-  border: 1px solid #00ffff55;
-  background: rgba(255,255,255,0.05);
-  color: #fff;
-}
-
-#memory-form button {
-  background: linear-gradient(90deg, #00d4ff, #8F00FF);
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
-  border-radius: 14px;
-  box-shadow: 0 0 20px #00d4ff;
-}
-
-
-
-/* ORB STYLING */
-.orb-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 40px;
-}
-#orb {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #00ffff, #000066);
-  box-shadow: 0 0 20px #00ffff, 0 0 40px #00ccff, 0 0 60px #0099ff;
-  animation: orbPulse 2s infinite ease-in-out;
-}
-@keyframes orbPulse {
-  0% { transform: scale(1); box-shadow: 0 0 20px #00ffff; }
-  50% { transform: scale(1.1); box-shadow: 0 0 40px #00ccff; }
-  100% { transform: scale(1); box-shadow: 0 0 20px #00ffff; }
-}
-
-/* GLOWING BUTTONS */
+/* Glowing Buttons */
 #ask-lumina, #hey-lumina-button {
   background: linear-gradient(90deg, #6e00ff, #00d4ff);
   color: white;
@@ -241,7 +129,6 @@ button:hover {
   transform: scale(1.05);
   box-shadow: 0 0 25px #6e00ff, 0 0 40px #00d4ff;
 }
-
 #stop-button {
   background: crimson;
   color: white;
@@ -259,27 +146,38 @@ button:hover {
   box-shadow: 0 0 25px red, 0 0 40px crimson;
 }
 
-/* TIER CONTAINER */
-.tier-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 40px;
-  text-align: center;
-}
-
-/* GOLDEN HIGHLIGHT FOR SOVEREIGN */
-.tier-sovereign {
-  border-color: gold !important;
-  box-shadow: 0 0 30px gold, 0 0 60px goldenrod !important;
-}
-
-/* CENTER TIMELINE & MEMORY */
+/* Center Timeline + Memory Editor */
 #timeline-container, #memory-editor {
   text-align: center;
+  margin: 60px auto;
+  max-width: 700px;
 }
+#timeline-container h2,
+#memory-editor h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+}
+#memory-form input,
 #memory-form button {
   display: block;
-  margin: 0 auto;
+  margin: 10px auto;
+  width: 90%;
+  max-width: 500px;
+}
+#memory-form input {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #00ffff55;
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+}
+#memory-form button {
+  background: linear-gradient(90deg, #00d4ff, #8F00FF);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 14px;
+  box-shadow: 0 0 20px #00d4ff;
 }
