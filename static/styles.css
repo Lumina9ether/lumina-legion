@@ -1,5 +1,82 @@
-<paste your provided CSS content here>
+/* ORB EFFECTS */
+.orb-wrapper {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 40px auto;
+}
 
+.orb {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #66fcf1, #1f2833, #0b0c2a);
+  box-shadow: 0 0 30px 15px #00ffe7;
+  animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 15px 5px #00ffe7; }
+  50% { box-shadow: 0 0 35px 20px #00ffe7; }
+  100% { box-shadow: 0 0 15px 5px #00ffe7; }
+}
+
+.orb-idle {
+  background: radial-gradient(circle at center, #6e00ff 20%, #1a0033 100%);
+  box-shadow: 0 0 20px #6e00ff;
+}
+
+.orb-thinking {
+  animation: pulse-think 1.2s infinite;
+  background: radial-gradient(circle at center, #ffcc00 30%, #1a1a00 100%);
+}
+
+.orb-speaking {
+  animation: pulse-speak 0.6s infinite;
+  background: radial-gradient(circle at center, #00e0ff 30%, #001f33 100%);
+}
+
+@keyframes pulse-think {
+  0% { box-shadow: 0 0 10px #ffd700; }
+  50% { box-shadow: 0 0 20px #ffd700; }
+  100% { box-shadow: 0 0 10px #ffd700; }
+}
+
+@keyframes pulse-speak {
+  0% { box-shadow: 0 0 10px #00d4ff; }
+  50% { box-shadow: 0 0 25px #00ffff; }
+  100% { box-shadow: 0 0 10px #00d4ff; }
+}
+
+.particles {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+}
+
+.particles span {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #00ffffaa;
+  border-radius: 50%;
+  animation: floatAround 4s infinite ease-in-out;
+}
+
+.particles span:nth-child(1) { top: -10px; left: 50%; animation-delay: 0s; }
+.particles span:nth-child(2) { bottom: -10px; right: 50%; animation-delay: 0.5s; }
+.particles span:nth-child(3) { top: 50%; left: -10px; animation-delay: 1s; }
+.particles span:nth-child(4) { top: 20%; right: -10px; animation-delay: 1.5s; }
+.particles span:nth-child(5) { bottom: 20%; left: -10px; animation-delay: 2s; }
+
+@keyframes floatAround {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 0.5; }
+  50% { transform: translate(10px, -10px) rotate(180deg); opacity: 1; }
+  100% { transform: translate(0, 0) rotate(360deg); opacity: 0.5; }
+}
+
+/* TIER PACKAGE STYLING */
 .tier-container {
   display: flex;
   flex-wrap: wrap;
@@ -44,4 +121,22 @@
 
 .tier-card ul li {
   margin: 10px 0;
+}
+
+.tier-card button {
+  margin-top: 15px;
+  padding: 12px 24px;
+  background: linear-gradient(90deg, #8F00FF, #5500AA);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 0 12px #8F00FF;
+  transition: all 0.3s ease;
+}
+
+.tier-card button:hover {
+  background: linear-gradient(90deg, #a84dff, #6a1bb5);
+  box-shadow: 0 0 20px #aa00ff;
 }
